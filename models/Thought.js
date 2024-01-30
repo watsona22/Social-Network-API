@@ -1,35 +1,30 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 //https://mongoosejs.com/docs/2.7.x/docs/validation.html
-function validator(v) {
-    return v.length <= 128;
-};
-function validator(v) {
-    return v.length <= 280;
-};
 
-const reactionSchema = new mongoose.Schema.ObjectId({
-    reactionBody: { type: String, required: true, validate: [validator, 'error'] },
+const reactionSchema = new Schema({
+    reactionId: { type: Schema.Types.ObjectId, default: () => new mongoose.Types.ObjectId() },
+    reactionBody: { type: String, required: true, maxLength: 280 },
     username: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
 });
 
-const thoughtSchema = new mongoose.Schema({
-    thoughtText: { type: String, required: true, validate: [validator, 'error'] },
+const thoughtSchema = new Schema({
+    thoughtText: { type: String, required: true, minLength: 1, maxLength: 280 },
     createdAt: { type: Date, default: Date.now },
     username: { type: String, required: true },
-    reaction: { enum: [reactionSchema] },
+    reaction: [reactionSchema]
 });
 
-const Thought = mongoose.model('Thought', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
-const handleError = (err) => console.error(err);
+// const handleError = (err) => console.error(err);
 
-Thought
-    .create({
+// Thought
+//     .create({
 
-    })
-    .then(result => console.log('Created new document', result))
-    .catch(err => handleError(err));
+//     })
+//     .then(result => console.log('Created new document', result))
+//     .catch(err => handleError(err));
 
 
 module.exports = Thought;

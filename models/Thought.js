@@ -17,14 +17,5 @@ const thoughtSchema = new Schema({
 
 const Thought = model('thought', thoughtSchema);
 
-// const handleError = (err) => console.error(err);
-
-// Thought
-//     .create({
-
-//     })
-//     .then(result => console.log('Created new document', result))
-//     .catch(err => handleError(err));
-
 
 module.exports = Thought;

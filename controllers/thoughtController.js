@@ -4,6 +4,8 @@ module.exports = {
     // get all thoughts
     async getThoughts(req, res) {
         try {
+            // const thoughts = await User.find().populate("thoughts").populate("friends");
+
             const thoughts = await Thought.find();
             res.json(thoughts);
         } catch (err) {
@@ -18,7 +20,7 @@ module.exports = {
                 _id: req.params.thoughtId
                 // .populate('reaction')
             });
-            !post
+            !thought
                 ? res.status(404).json({ message: 'No thought with that ID' })
                 : res.json(thought);
         } catch (err) {
@@ -56,8 +58,10 @@ module.exports = {
     async deleteThought(req, res) {
         try {
             const thought = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
-
-            await Reaction.deleteMany({ _id: { $in: thought.reaction } });
+            if (!thought) {
+                return res.status(404).json({ message: 'No thought with that ID' });
+            }
+            await User.deleteMany({ _id: { $in: user.thoughts } });
             res.json({ message: 'Thought and reaction deleted!' });
         } catch (err) {
             res.status(500).json(err);

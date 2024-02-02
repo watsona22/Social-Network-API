@@ -6,17 +6,22 @@ const userSchema = new Schema({
     thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
     // thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
     friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
-});
+},
+    {
+        // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
+        toJSON: {
+            virtuals: true,
+        },
+        id: false,
+    });
+
+userSchema
+    .virtual('friendCount')
+    // Getter
+    .get(function () {
+        return this.friends.length;
+    });
 
 const User = model('user', userSchema);
-
-// const handleError = (err) => console.error(err);
-
-// User
-//     .create({
-
-//     })
-//     .then(result => console.log('Created new document', result))
-//     .catch(err => handleError(err));
 
 module.exports = User;

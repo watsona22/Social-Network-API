@@ -4,9 +4,8 @@ module.exports = {
     // get all thoughts
     async getThoughts(req, res) {
         try {
-            // const thoughts = await User.find().populate("thoughts").populate("friends");
-
-            const thoughts = await Thought.find();
+            const thoughts = await Thought.find()
+                .populate("thoughts", "friends");
             res.json(thoughts);
         } catch (err) {
             console.error({ message: err });

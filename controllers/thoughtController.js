@@ -20,7 +20,6 @@ module.exports = {
         try {
             const thought = await Thought.findOne({
                 _id: req.params.thoughtId
-                // .populate('reaction')
             });
             !thought
                 ? res.status(404).json({ message: 'No thought with that ID' })
@@ -41,9 +40,12 @@ module.exports = {
     // update a thought by id
     async updateThought(req, res) {
         try {
+            console.log('You are updating a thought');
+            console.log(req.body);
+
             const thought = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
-                { $set: req.body },
+                { $set: req.body }, // Use $set to update specific fields
                 { runValidators: true, new: true }
             );
 
@@ -52,10 +54,12 @@ module.exports = {
             }
 
             res.json(thought);
+            console.log(thought);
         } catch (err) {
             res.status(500).json(err);
         }
     },
+
     // remove a thought by id
     async deleteThought(req, res) {
         try {

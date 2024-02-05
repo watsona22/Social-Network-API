@@ -14,7 +14,9 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 ```
 
-This challenge utilized the node environment to create a program using dynamic Javascript. This project... 
+This challenge utilized the node environment to create a program using dynamic Javascript. I first encountered issues when trying to seed the database. For whatever reason, the data and seed files would not populate data.  I then decided to create records in insomnia instead. After that, I encountered issues with the controller types - user and thought - the nuances of their respective references made the call logic a bit tricky. For instance, when trying to add or remove friends or reaction, I had to point to specific attributes and pay attention to the attribute that joined them in order to return the desired value.  I found Insomnia tremendously helpful in testing the endpoints after each code edit. Naming convention continues to be an important particular to consider when building the logic. 
+
+Reformatting code, implementing clear naming convention, and notating often are skills that I work on continously - I hope to make them a natural part of the build process. 
 
 ## Usage
 

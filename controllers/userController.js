@@ -42,7 +42,7 @@ module.exports = {
         try {
             const user = await User.findOneAndUpdate(
                 { _id: req.params.userId },
-                { $set: req.body.userId },
+                { $set: req.body },
                 { runValidators: true, new: true }
             );
 
@@ -52,6 +52,7 @@ module.exports = {
 
             res.json(user);
         } catch (err) {
+            console.log(err)
             res.status(500).json(err);
         }
     },

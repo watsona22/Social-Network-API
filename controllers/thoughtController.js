@@ -81,7 +81,7 @@ module.exports = {
 
             const thought = await Thought.findOneAndUpdate(
                 { _id: req.params.thoughtId },
-                { $addToSet: { reaction: req.body.reactionId } },
+                { $push: { reaction: req.body } },
                 { runValidators: true, new: true }
             );
             console.log(req.body)
@@ -89,7 +89,7 @@ module.exports = {
                 return res.status(404).json({ message: 'No thought with this id!' });
             }
 
-            res.json(req.body);
+            res.json(thought);
         } catch (err) {
             res.status(500).json(err);
         }

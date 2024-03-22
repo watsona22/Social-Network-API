@@ -1,7 +1,7 @@
-##Description
+## Description
 This social network web application allows users to share their thoughts, react to friends’ thoughts, and create a friend list. Social Network API utilizes Express.js routing, MongoDB database, and Mongo ODM to get, update, and delete documents. The dynamic components of our website are supported by JavaScript.
 
-##Acceptance Criteria
+## Acceptance Criteria
 ```md
 GIVEN a social network API
 WHEN I enter the command to invoke the application

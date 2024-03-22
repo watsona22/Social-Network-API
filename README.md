@@ -1,4 +1,4 @@
-The purpose of this project was to build API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. Social Network API utilizes Express.js routing, MongoDB database, and Mongo ODM to get, update, and delete documents. The dynamic components of our website are supported by JavaScript.
+This social network web application allows users to share their thoughts, react to friends’ thoughts, and create a friend list. Social Network API utilizes Express.js routing, MongoDB database, and Mongo ODM to get, update, and delete documents. The dynamic components of our website are supported by JavaScript.
 
 ```md
 GIVEN a social network API

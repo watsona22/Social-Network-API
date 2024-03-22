@@ -18,6 +18,8 @@ Reformatting code, implementing clear naming convention, and notating often are 
 
 ## Usage
 The server.js file can be used to understand the dynamic code that supports the application. Here is a link to the walkthrough, for your reference: https://drive.google.com/file/d/1vidrKbck0GYKjHzAcftckSxNs8cFA8IX/view
+![Application Demo](demo.png)
+
 
 ## Credits
 The project was completed with help from the course materials and tutor, Erik Hirsch.

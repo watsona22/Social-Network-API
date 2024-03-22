@@ -1,5 +1,7 @@
+##Description
 This social network web application allows users to share their thoughts, react to friends’ thoughts, and create a friend list. Social Network API utilizes Express.js routing, MongoDB database, and Mongo ODM to get, update, and delete documents. The dynamic components of our website are supported by JavaScript.
 
+##Acceptance Criteria
 ```md
 GIVEN a social network API
 WHEN I enter the command to invoke the application
@@ -14,13 +16,13 @@ This challenge utilized the node environment to create a program using dynamic J
 ```
 Reformatting code, implementing clear naming convention, and notating often are skills that I work on continously - I hope to make them a natural part of the build process.
 
-Usage
+## Usage
 The server.js file can be used to understand the dynamic code that supports the application. Here is a link to the walkthrough, for your reference: https://drive.google.com/file/d/1vidrKbck0GYKjHzAcftckSxNs8cFA8IX/view
 
-Credits
+## Credits
 The project was completed with help from the course materials and tutor, Erik Hirsch.
 
-License
+## License
 MIT License Copyright (c) [2023] [Amber Watson]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
